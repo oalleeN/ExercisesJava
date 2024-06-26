@@ -15,7 +15,7 @@ public class Program {
         list.add(new Product("Lapis", 450.00));
         list.add(new Product("Alz", 26.00));
 
-        Collections.sort(list);
+        list.sort(new MyComparator());
 
         for (Product product : list) {
             System.out.println(product);
