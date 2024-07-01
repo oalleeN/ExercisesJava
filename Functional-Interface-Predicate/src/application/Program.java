@@ -23,9 +23,7 @@ public class Program {
 
         double min = 100.0;
 
-        Predicate<Product> pred = p -> p.getPrice() >= min; // declared lambda expression
-
-        list.removeIf(pred);
+        list.removeIf(p -> p.getPrice() >= min); // Inline lambda expression
 
         for (Product p : list) {
             System.out.println(p);
