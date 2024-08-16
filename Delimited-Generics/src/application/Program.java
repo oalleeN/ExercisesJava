@@ -1,6 +1,6 @@
 package application;
 
-import entities.Employee;
+import entities.Product;
 import services.CalculationService;
 
 import java.io.BufferedReader;
@@ -10,11 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import static java.lang.System.out;
+
 public class Program {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
 
-        List<Employee> list = new ArrayList<>();
+        Product product = new Product();
+        List<Product> list = new ArrayList<>();
 
         String path = "C:\\tmp\\in.csv";
 
@@ -23,15 +26,16 @@ public class Program {
             String line = br.readLine();
             while (line != null) {
                 String[] separate = line.split(",");
-                list.add(new Employee(separate[0], Double.parseDouble(separate[1])));
+                list.add(new Product(separate[0], Double.parseDouble(separate[1])));
                 line = br.readLine();
             }
 
-            Employee x = CalculationService.max(list);
-            System.out.println("Max: " + x);
+            product.printList(list);
+            Product x = CalculationService.max(list);
+            out.println("\nMax: " + x);
 
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            out.println(e.getMessage());
         }
     }
 }
