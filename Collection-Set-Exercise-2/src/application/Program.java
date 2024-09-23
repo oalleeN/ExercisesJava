@@ -1,16 +1,16 @@
 package application;
 
+import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class Program {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Set<Integer> courseA = new TreeSet<>();
-        Set<Integer> courseB = new TreeSet<>();
-        Set<Integer> courseC = new TreeSet<>();
+        Set<Integer> courseA = new HashSet<>();
+        Set<Integer> courseB = new HashSet<>();
+        Set<Integer> courseC = new HashSet<>();
 
         System.out.print("How many students for course A? ");
         int num = sc.nextInt() ;
