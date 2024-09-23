@@ -25,7 +25,7 @@ public class Program {
                 String name = build[0];
                 int number = Integer.parseInt(build[1]);
 
-                if (record.containsKey(name)) {
+                if (record.containsKey(name)) { // caso a chave (nome) se repita
                     /* int sum = record.get(name);
                     record.put(name, number + sum); */
                     record.compute(name, (k, sum) -> number + sum);
@@ -33,14 +33,12 @@ public class Program {
                     record.put(name, number);
                 }
 
-
                 line = br.readLine();
             }
 
             for (String str : record.keySet()) {
                 System.out.println(str + ": " + record.get(str));
             }
-
 
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
