@@ -1,18 +1,14 @@
 package application;
 
 import entities.Product;
-import util.ProductPredicate;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.function.Predicate;
 
 public class Program {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
-
-        Product product = new Product();
 
         List<Product> list = new ArrayList<>();
 
@@ -25,8 +21,6 @@ public class Program {
 
         list.removeIf(p -> p.getPrice() >= min); // Inline lambda expression
 
-        for (Product p : list) {
-            System.out.println(p);
-        }
+        list.forEach(System.out::println);
     }
 }
